@@ -49,3 +49,6 @@ RUN if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then \
         fi \
     done \
 fi
+
+COPY --chmod=0755 ./run_grafana.sh /run_grafana.sh
+ENTRYPOINT /run_grafana.sh
