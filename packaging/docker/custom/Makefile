@@ -13,6 +13,7 @@ help: ## Show usage information for this Makefile.
 build: ## Build the container image locally.
 	docker build . \
 		--build-arg "GRAFANA_VERSION=$(VERSION)" \
+		--build-arg "GF_INSTALL_IMAGE_RENDERER_PLUGIN=true" \
 		--build-arg "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,grafana-timestream-datasource" \
 		-t $(image) -f Dockerfile
 
